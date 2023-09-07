@@ -4,20 +4,24 @@ import Home from "./routes/Home"
 import Project from "./routes/Project"
 import About from "./routes/About"
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 function App() {
+  
   return (
-   
-    <div className="container">
-      <BrowserRouter basename="/my-portfolio">
+      <div className="App">
+        <nav>
+          <Link to="/"></Link>
+          <Link to="/project"></Link>
+          <Link to="/about"></Link>
+        </nav>
         <Routes>
-          <Route exact path="/my-portfolio" element={<Home />}/>
+          <Route path="/" element={<Home /> }/>
           <Route path="/project" element={<Project />}/>
           <Route path="/about" element={<About />}/>
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div> 
+    
       
   );
 }
